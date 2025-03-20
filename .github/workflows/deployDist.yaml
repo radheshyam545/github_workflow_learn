@@ -1,0 +1,34 @@
+name: Deploy Dist
+on: push
+# workflow_dispatch -> for manually trigger
+# for multiple in array like [push]
+
+# first method
+# [push , workflow_dispatch]
+# on:
+#     - push
+#     - workflow_dispatch
+
+#  array of objects ke liye 
+# steps:
+#     - name: "greet user"
+#       run: echo "Hello World"
+
+
+jobs:
+    test:
+        runs-on: ubuntu-latest
+        steps:
+           - name: Get Code
+        #    difficult way & easy way
+            #  run: echo "Hello World"  // yh ek command ke liye 
+            #  mutiple comands ke liye pipe(|) and do indention (do space)
+            #git clone https://github.com/radheshyam545/github_workflow_learn.git
+            #  ek github context milta hain jiske andr kuch values hti hain 
+            #  for access context value "${{github}}" me dalna hoga
+            #  git clone https://github.com/radheshyam545/github_workflow_learn.git
+            #    git clone https://github.com/${{github.repository}}.git
+             run: | 
+               echo "Cloning Repo..."
+               echo "${{toJson(github)}}"
+               git clone https://github.com/${{github.repository}}.git
