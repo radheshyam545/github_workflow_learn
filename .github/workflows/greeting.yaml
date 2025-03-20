@@ -1,0 +1,10 @@
+name: Greeting
+on: push
+# for multiple in array like [push]
+
+jobs:
+    greet:
+        runs-on: ubuntu-latest
+        steps:
+           - name: "greet user"
+             run: echo "Hello World"
