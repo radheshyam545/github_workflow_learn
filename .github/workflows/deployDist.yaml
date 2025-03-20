@@ -25,9 +25,9 @@ jobs:
             #  mutiple comands ke liye pipe(|) and do indention (do space)
             #git clone https://github.com/radheshyam545/github_workflow_learn.git
             #  ek github context milta hain jiske andr kuch values hti hain 
-            #  for access context value "${{github}}" me dalna hoga
+            #  for access context value "${github}}" me dalna hoga
             #  git clone https://github.com/radheshyam545/github_workflow_learn.git
-            #    git clone https://github.com/${{github.repository}}.git
+            #    git clone https://github.com/${github.repository}}.git
              run: | 
                echo "Cloning Repo..."
                echo "${{toJson(github)}}"
